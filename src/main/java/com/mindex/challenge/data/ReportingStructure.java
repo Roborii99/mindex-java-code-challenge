@@ -5,7 +5,6 @@ public class ReportingStructure {
     private int numberOfReports;
 
     public ReportingStructure(){
-
     }
 
     public Employee getEmployee() {

@@ -2,9 +2,11 @@ package com.mindex.challenge.dao;
 
 import com.mindex.challenge.data.Compensation;
 import org.springframework.stereotype.Repository;
-
 import java.util.HashMap;
 
+/**
+ * Class to handle persistence of compensation data
+ */
 @Repository
 public class CompensationRepository {
     private HashMap<String, Compensation> compensationData = new HashMap<>();

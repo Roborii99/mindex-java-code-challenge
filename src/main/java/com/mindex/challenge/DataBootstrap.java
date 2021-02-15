@@ -5,11 +5,8 @@ import com.mindex.challenge.dao.CompensationRepository;
 import com.mindex.challenge.dao.EmployeeRepository;
 import com.mindex.challenge.data.Compensation;
 import com.mindex.challenge.data.Employee;
-import com.mongodb.util.JSON;
-import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,8 +44,8 @@ public class DataBootstrap {
         // bootstrap with compensation data for testing
         try {
             InputStream inJson = this.getClass().getResourceAsStream(DATASTORE_LOCATION_2);
-            Compensation compensation = new ObjectMapper().readValue(inJson, Compensation.class);
-            System.out.println(compensation.getEffectiveDate()+ " "+ compensation.getEmployeeId()+ " " + compensation.getSalary());
+            Compensation compensation = objectMapper.readValue(inJson, Compensation.class);
+            //System.out.println(compensation.getEffectiveDate()+ " "+ compensation.getEmployeeId()+ " " + compensation.getSalary());
             compensationRepository.insert(compensation);
         }catch(Exception e){
             System.out.println(e);

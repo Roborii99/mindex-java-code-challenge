@@ -1,6 +1,5 @@
 package com.mindex.challenge.data;
 
-
 public class Compensation {
     private String employeeId;
     private String salary;
